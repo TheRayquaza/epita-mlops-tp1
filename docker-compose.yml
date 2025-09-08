@@ -2,10 +2,17 @@ version: "3.9"
 
 services:
   app:
-    image: python:3.12-slim
+    image: epita-mlops:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: epita-mlops
     working_dir: /app
+    ports:
+      - "5678:5678"
     volumes:
       - ./:/app
-    command: bash
-    tty: true
+    environment:
+      - PORT=5678
+      - HOST=0.0.0.0
+      - MODEL_PATH=/app/regression.joblib
