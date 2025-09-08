@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import joblib
-import train_model
 from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 import numpy as np
