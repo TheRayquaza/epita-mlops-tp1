@@ -21,7 +21,7 @@ async def predict(data: PredictData):
     pred = model.predict(input_array)
     return {"prediction": float(pred[0])}
 
-@app.get("/redirect")
+@app.get("/")
 async def redirect_to_youtube():
     return RedirectResponse("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
