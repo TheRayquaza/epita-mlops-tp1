@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: epita-mlops-mateo/tp1:latest
+          tags: therayquaza/epita-mlops-mateo-tp1:latest
