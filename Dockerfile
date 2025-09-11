@@ -5,6 +5,7 @@ WORKDIR /app
 USER root
 
 ENV PATH=/home/appuser/.local/bin:$PATH
+ENV MODEL_PATH=/app/regression.joblib
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
