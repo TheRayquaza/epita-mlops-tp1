@@ -37,6 +37,4 @@ jobs:
           username: ubuntu
           password: ${{ secrets.PASSWORD }}
           port: 22
-          script:
-          - docker kill $(docker ps -q --filter ancestor=therayquaza/epita-mlops-mateo-tp1:latest) || true
-          - docker run -it --rm -p 5678:5678 -e PORT=5678 -e HOST=0.0.0.0 --name epita-mlops-mateo-tp1 therayquaza/epita-mlops-mateo-tp1:latest
+          script: (docker kill $(docker ps -q --filter ancestor=therayquaza/epita-mlops-mateo-tp1:latest) || true) && docker run -it --rm -p 5678:5678 -e PORT=5678 -e HOST=0.0.0.0 --name epita-mlops-mateo-tp1 therayquaza/epita-mlops-mateo-tp1:latest
